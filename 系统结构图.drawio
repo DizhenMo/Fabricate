@@ -1,0 +1,221 @@
+<mxfile host="app.diagrams.net" modified="2026-04-30T00:00:00.000Z" agent="Mozilla/5.0" etag="fabricate_system" version="22.1.0" type="device">
+  <diagram name="系统架构图" id="fabricate_architecture">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="title" value="&lt;b&gt;Fabricate 图像处理系统架构图&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 前端层 (Vue 3 + Vite) ========== -->
+        <mxCell id="frontend_container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#01579b;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="700" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend_label" value="&lt;b&gt;前端层 (Vue 3 + Vite)&lt;/b&gt;&#xa;Port: 5173 (dev) / 静态部署" style="text;html=1;strokeColor=none;fillColor=#01579b;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=14;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="60" y="110" width="280" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- App.vue -->
+        <mxCell id="app_vue" value="&lt;b&gt;App.vue&lt;/b&gt;&#xa;路由控制器&#xa;(页面切换管理)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="170" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Home.vue -->
+        <mxCell id="home_vue" value="&lt;b&gt;Home.vue&lt;/b&gt;&#xa;首页模块&#xa;功能导航入口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_app_home" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7b1fa2;strokeWidth=2;" edge="1" parent="1" source="app_vue" target="home_vue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ImageProcessor.vue -->
+        <mxCell id="imageprocessor_vue" value="&lt;b&gt;ImageProcessor.vue&lt;/b&gt;&#xa;标记移除模块&#xa;FLUX扩散模型&#xa;(RunningHub API)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="280" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_app_imageprocessor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2e7d32;strokeWidth=2;" edge="1" parent="1" source="app_vue" target="imageprocessor_vue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Wanwu.vue -->
+        <mxCell id="wanwu_vue" value="&lt;b&gt;Wanwu.vue&lt;/b&gt;&#xa;分割移除模块&#xa;U-Net模型 + 目标移除&#xa;(本地API + RunningHub)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="280" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_app_wanwu" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565c0;strokeWidth=2;" edge="1" parent="1" source="app_vue" target="wanwu_vue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GAN.vue -->
+        <mxCell id="gan_vue" value="&lt;b&gt;GAN.vue&lt;/b&gt;&#xa;GAN图像修复模块&#xa;(第三方API)&#xa;fortunefreedom.top:9091" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="400" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_app_gan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#c62828;strokeWidth=2;" edge="1" parent="1" source="app_vue" target="gan_vue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 前端公共组件/依赖 -->
+        <mxCell id="frontend_deps" value="&lt;b&gt;前端依赖&lt;/b&gt;&#xa;• Vue 3 (Composition API)&#xa;• Axios (HTTP请求)&#xa;• HTML5 Canvas (绘制标注)&#xa;• Vite (构建工具)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f57f17;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="520" y="170" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- 前端功能说明 -->
+        <mxCell id="frontend_features" value="&lt;b&gt;核心功能&lt;/b&gt;&#xa;• 图片上传/拖拽&#xa;• Canvas标注绘制&#xa;• Prompt模板管理&#xa;• 进度条展示&#xa;• 结果下载" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#558b2f;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="400" width="150" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 后端层 (Python Flask) ========== -->
+        <mxCell id="backend_container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="850" y="100" width="700" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="backend_label" value="&lt;b&gt;后端层 (Python Flask + PyTorch)&lt;/b&gt;&#xa;Port: 5000 | GPU/CPU 推理" style="text;html=1;strokeColor=none;fillColor=#e65100;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=14;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="860" y="110" width="320" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- api.py -->
+        <mxCell id="api_py" value="&lt;b&gt;api.py&lt;/b&gt;&#xa;Flask REST API&#xa;• /segment (POST)&#xa;• /health (GET)&#xa;CORS跨域支持" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="880" y="180" width="150" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Unet.py -->
+        <mxCell id="unet_py" value="&lt;b&gt;Unet.py&lt;/b&gt;&#xa;U-Net分割模型&#xa;• DoubleConv&#xa;• Down/Up采样&#xa;• 编码器-解码器结构" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="180" width="150" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- inference.py -->
+        <mxCell id="inference_py" value="&lt;b&gt;inference.py&lt;/b&gt;&#xa;推理脚本&#xa;(独立推理入口)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="180" width="130" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 模型文件 -->
+        <mxCell id="model_file" value="&lt;b&gt;model/last.pt&lt;/b&gt;&#xa;预训练权重&#xa;(U-Net分割模型)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fce4ec;strokeColor=#c62828;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="310" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_unet_model" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#c62828;strokeWidth=2;dashed=1;" edge="1" parent="1" source="unet_py" target="model_file">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 后端依赖 -->
+        <mxCell id="backend_deps" value="&lt;b&gt;后端依赖&lt;/b&gt;&#xa;• Flask + Flask-CORS&#xa;• PyTorch + TorchVision&#xa;• OpenCV (cv2)&#xa;• Pillow (PIL)&#xa;• NumPy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f57f17;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="280" width="140" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- 输出目录 -->
+        <mxCell id="output_dir" value="&lt;b&gt;output/&lt;/b&gt;&#xa;• mask.png&#xa;• mask_color.png&#xa;• overlay.png" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#f1f8e9;strokeColor=#558b2f;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="310" width="120" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 外部API层 ========== -->
+        <mxCell id="external_container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="850" y="460" width="700" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="external_label" value="&lt;b&gt;外部AI服务 API&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=#c62828;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=14;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="860" y="470" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- RunningHub API -->
+        <mxCell id="runninghub_api" value="&lt;b&gt;RunningHub API&lt;/b&gt;&#xa;FLUX扩散模型&#xa;• 图片上传&#xa;• 任务提交/查询&#xa;• 图像修复/移除&#xa;runninghub.cn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#b71c1c;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="880" y="515" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- GAN API -->
+        <mxCell id="gan_api" value="&lt;b&gt;GAN修复API&lt;/b&gt;&#xa;第三方GAN服务&#xa;• 人脸/通用/风景修复&#xa;fortunefreedom.top:9091" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#b71c1c;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="515" width="170" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 数据流连接 ========== -->
+
+        <!-- 前端 -> 后端 (Wanwu.vue -> api.py) -->
+        <mxCell id="flow_frontend_backend" value="HTTP POST&#xa;/segment&#xa;(图片+类型)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565c0;strokeWidth=3;" edge="1" parent="1" source="wanwu_vue" target="api_py">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="320" />
+              <mxPoint x="750" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 前端 -> RunningHub (ImageProcessor.vue) -->
+        <mxCell id="flow_frontend_runninghub" value="HTTPS&#xa;REST API&#xa;(标注图片+Prompt)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b71c1c;strokeWidth=2;dashed=1;" edge="1" parent="1" source="imageprocessor_vue" target="runninghub_api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 前端 -> RunningHub (Wanwu.vue -> 目标移除) -->
+        <mxCell id="flow_wanwu_runninghub" value="HTTPS&#xa;目标移除API&#xa;(分割结果+Prompt)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b71c1c;strokeWidth=2;dashed=1;" edge="1" parent="1" source="wanwu_vue" target="runninghub_api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 前端 -> GAN API -->
+        <mxCell id="flow_frontend_gan" value="HTTP POST&#xa;/process_image&#xa;(图片+掩码+参数)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b71c1c;strokeWidth=2;dashed=1;" edge="1" parent="1" source="gan_vue" target="gan_api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- api.py -> Unet.py -->
+        <mxCell id="flow_api_unet" value="模型推理&#xa;(torch.no_grad)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2e7d32;strokeWidth=2;" edge="1" parent="1" source="api_py" target="unet_py">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 技术栈标签 ========== -->
+        <mxCell id="tech_stack" value="&lt;b&gt;技术栈总览&lt;/b&gt;&#xa;&#xa;&lt;b&gt;前端:&lt;/b&gt; Vue 3 + Vite + Axios + HTML5 Canvas&#xa;&lt;b&gt;后端:&lt;/b&gt; Python + Flask + PyTorch + OpenCV&#xa;&lt;b&gt;模型:&lt;/b&gt; U-Net (语义分割)&#xa;&lt;b&gt;外部API:&lt;/b&gt; RunningHub (FLUX) / 第三方GAN服务&#xa;&lt;b&gt;部署:&lt;/b&gt; 前端静态部署 + 后端Flask服务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#424242;strokeWidth=2;fontSize=12;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="640" width="700" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 数据流图 (处理流程) ========== -->
+        <mxCell id="process_container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#3f51b5;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="850" y="640" width="700" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="process_label" value="&lt;b&gt;典型处理流程 (以分割移除为例)&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=#3f51b5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="860" y="650" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step1" value="1.上传图片" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="870" y="695" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="step2" value="2.U-Net分割" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="980" y="695" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="step3" value="3.标注补充" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="695" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="step4" value="4.FLUX移除" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="695" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="step5" value="5.结果下载" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="695" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#388e3c;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="step1" target="step2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#388e3c;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="step2" target="step3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#388e3c;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="step3" target="step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#388e3c;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="step4" target="step5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 文件结构 ========== -->
+        <mxCell id="file_structure" value="&lt;b&gt;项目文件结构&lt;/b&gt;&#xa;&#xa;Fabricate/&#xa;├── src/                    &lt;i&gt;前端源码&lt;/i&gt;&#xa;│   ├── components/&#xa;│   │   ├── Home.vue&#xa;│   │   ├── ImageProcessor.vue&#xa;│   │   ├── Wanwu.vue&#xa;│   │   └── GAN.vue&#xa;│   ├── App.vue&#xa;│   └── main.js&#xa;├── Backend/                &lt;i&gt;后端服务&lt;/i&gt;&#xa;│   ├── api.py&#xa;│   ├── Unet.py&#xa;│   ├── inference.py&#xa;│   └── model/last.pt&#xa;├── public/samples/         &lt;i&gt;示例图片&lt;/i&gt;&#xa;├── package.json&#xa;└── vite.config.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#616161;strokeWidth=1;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontFamily=Consolas;" vertex="1" parent="1">
+          <mxGeometry x="50" y="800" width="300" height="340" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

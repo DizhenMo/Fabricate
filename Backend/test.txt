@@ -1,0 +1,64 @@
+要自己运行 `Backend\inference.py`，你可以按照以下步骤在终端中操作：
+
+
+### 步骤 1：打开终端并进入项目根目录
+首先，打开终端（如 Windows 命令提示符、PowerShell 或 VS Code 终端），然后导航到项目的根目录：
+```bash
+cd g:\CS\Fabricate
+```
+
+
+### 步骤 2：激活虚拟环境
+在运行脚本前，需要激活项目的虚拟环境（`venv`）：
+```bash
+# Windows 命令提示符或 PowerShell
+venv\Scripts\activate
+```
+激活后，终端提示符会显示虚拟环境名称（如 `(venv)` 或 `(TraeAI-5)`）。
+
+
+### 步骤 3：运行脚本
+激活虚拟环境后，直接运行 `inference.py` 脚本：
+```bash
+python Backend\api.py
+```
+
+
+### 常用参数说明
+脚本支持以下命令行参数，可根据需要添加：
+
+| 参数               | 说明                                 | 默认值                           |
+|--------------------|--------------------------------------|----------------------------------|
+| `--model-path`     | 模型权重文件路径                     | `Backend/model/last.pt`          |
+| `--image-path`     | 输入图像路径                         | `Backend/1.jpg`                  |
+| `--scale`          | 图像缩放因子                         | `0.5`                            |
+| `--save-overlay`   | 保存叠加图像（无需值，添加此参数即可） | 不保存（默认）                    |
+
+
+### 示例命令
+1. **基本运行**（使用默认参数）：
+   ```bash
+   python Backend\inference.py
+   ```
+
+2. **保存叠加图像**：
+   ```bash
+   python Backend\inference.py --save-overlay
+   ```
+
+3. **使用不同的图像**：
+   ```bash
+   python Backend\inference.py --image-path Backend\2.jpg --save-overlay
+   ```
+
+4. **调整缩放因子**：
+   ```bash
+   python Backend\inference.py --scale 0.8 --save-overlay
+   ```
+
+
+### 运行结果
+脚本执行后，会在 `Backend/output/` 目录生成以下文件：
+- `{图像名}_mask.png`：分割掩码（黑白）
+- `{图像名}_mask_color.png`：彩色分割掩码
+- `{图像名}_overlay.png`：原始图像与分割结果的叠加图（仅当添加 `--save-overlay` 参数时生成）
