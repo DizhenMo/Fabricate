@@ -37,6 +37,21 @@ pip install -r requirements.txt
 python api.py
 ```
 
+## 示例效果
+
+### 图像分割示例
+
+![分割示例1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg)
+![分割输出1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg)
+
+![分割示例2](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png)
+![分割输出2](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.jpg)
+
+### GAN 生成示例
+
+![GAN示例1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1.png)
+![GAN输出1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1-output.png)
+
 ## 项目结构
 
 ```
