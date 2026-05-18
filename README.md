@@ -41,16 +41,16 @@ python api.py
 
 ### 图像分割示例
 
-![分割示例1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg)
-![分割输出1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg)
-
-![分割示例2](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png)
-![分割输出2](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.jpg)
+| 原图 | 输出 |
+|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg" width="200" /> |
+| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.jpg" width="200" /> |
 
 ### GAN 生成示例
 
-![GAN示例1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1.png)
-![GAN输出1](https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1-output.png)
+| 输入 | 输出 |
+|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1.png" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1-output.png" width="200" /> |
 
 ## 项目结构
 
