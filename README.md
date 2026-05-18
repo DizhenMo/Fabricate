@@ -41,14 +41,13 @@ python api.py
 
 ### FLUX示例
 
-| 原图 | 输出 |
-|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg" width="200" /> |
-| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.jpg" width="200" /> |
+| 1.jpg | 1-output.jpg | 2.png | 2-output.jpg | 3.jpg | 3-output.png |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/3.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/3-output.png" width="150" /> |
 
 ### 基于图像分割示例
 
-| 输入 | 输出 |
+| 1.png | 1-output.png |
 |:---:|:---:|
 | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1.png" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/2/1-output.png" width="200" /> |
 
