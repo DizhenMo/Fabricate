@@ -38,3 +38,10 @@ venv/
 
 # Output files
 Backend/output/
+
+# Documentation (not needed in repo)
+系统结构图.drawio
+API文档.txt
+GAN模型的api.txt
+*.drawio.png
+1.drawio.png
