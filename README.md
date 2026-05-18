@@ -39,14 +39,14 @@ python api.py
 
 ## 示例效果
 
-### 图像分割示例
+### FLUX示例
 
 | 原图 | 输出 |
 |:---:|:---:|
 | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg" width="200" /> |
 | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png" width="200" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.jpg" width="200" /> |
 
-### GAN 生成示例
+### 基于图像分割示例
 
 | 输入 | 输出 |
 |:---:|:---:|
