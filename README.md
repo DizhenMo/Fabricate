@@ -43,7 +43,7 @@ python api.py
 
 | 1.jpg | 1-output.jpg | 2.png | 2-output.jpg | 3.jpg | 3-output.png |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.png" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/3.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/3-output.png" width="150" /> |
+| <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/1-output.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2.png" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/2-output.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/3.jpg" width="150" /> | <img src="https://raw.githubusercontent.com/DizhenMo/Fabricate/main/public/samples/1/3-output.png" width="150" /> |
 
 ### 基于图像分割示例
 
