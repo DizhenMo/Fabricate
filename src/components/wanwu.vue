@@ -222,10 +222,10 @@ const removeObjectTime = ref(null)
 const removeObjectSuccess = ref('')
 
 const API_BASE_URL = 'http://127.0.0.1:5000'
-const RUNNINGHUB_API_URL = 'https://www.runninghub.cn/openapi/v2/run/ai-app/2042898453923110913'
-const RUNNINGHUB_QUERY_URL = 'https://www.runninghub.cn/openapi/v2/query'
-const RUNNINGHUB_UPLOAD_URL = 'https://www.runninghub.cn/openapi/v2/media/upload/binary'
-const API_KEY = 'cf6fc254954d4bc7ba8e4341dcd0b462'
+const RUNNINGHUB_API_URL = ''
+const RUNNINGHUB_QUERY_URL = ''
+const RUNNINGHUB_UPLOAD_URL = ''
+const API_KEY = ''
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/jpg']

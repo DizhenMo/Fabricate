@@ -245,9 +245,9 @@ const successMessage = ref('')
 const errorMessage = ref('')
 const resultImage = ref(null)
 
-const API_URL = ref('https://www.runninghub.cn/openapi/v2/run/ai-app/2042898453923110913')
-const QUERY_URL = ref('https://www.runninghub.cn/openapi/v2/query')
-const API_KEY = ref('cf6fc254954d4bc7ba8e4341dcd0b462')
+const API_URL = ref('')
+const QUERY_URL = ref('')
+const API_KEY = ref('')
 
 const canProcess = computed(() => {
   return uploadedImage.value && promptText.value.trim() !== ''
@@ -580,7 +580,7 @@ async function processImage() {
 
     progress.value = 10
 
-    const uploadUrl = 'https://www.runninghub.cn/openapi/v2/media/upload/binary'
+    const uploadUrl = ''
     const uploadFormData = new FormData()
     uploadFormData.append('file', dataURLtoBlob(annotatedImageData), 'annotated.png')
 
